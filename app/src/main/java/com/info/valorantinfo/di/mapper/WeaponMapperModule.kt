@@ -1,6 +1,6 @@
 package com.info.valorantinfo.di.mapper
 
-import com.info.valorantinfo.data.dto.Data
+import com.info.valorantinfo.data.dto.WeaponDto
 import com.info.valorantinfo.domain.mapper.WeaponDomainListMapperImpl
 import com.info.valorantinfo.domain.WeaponEntity
 import com.info.valorantinfo.domain.mapper.WeaponListMapper
@@ -18,5 +18,5 @@ abstract class WeaponMapperModule {
     @Singleton
     abstract fun bindWeaponMapper(
         weaponDomainListMapperImpl: WeaponDomainListMapperImpl
-    ): WeaponListMapper<Data, WeaponEntity>
+    ): WeaponListMapper<WeaponDto, WeaponEntity>
 }

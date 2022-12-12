@@ -3,7 +3,7 @@ package com.info.valorantinfo.data.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class WeaponDto(
     @SerializedName("assetPath")
     val assetPath: String,
     @SerializedName("category")

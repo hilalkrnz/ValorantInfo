@@ -1,7 +1,7 @@
 package com.info.valorantinfo.data.repository
 
 import com.info.valorantinfo.data.NetworkResponseState
-import com.info.valorantinfo.data.dto.Data
+import com.info.valorantinfo.data.dto.WeaponDto
 import com.info.valorantinfo.data.source.RemoteDataSource
 import com.info.valorantinfo.di.coroutine.IoDispatcher
 import com.info.valorantinfo.domain.repository.ValorantRepository
@@ -15,7 +15,7 @@ class ValorantRepositoryImpl @Inject constructor(
    @IoDispatcher private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ): ValorantRepository {
 
-    override suspend fun getWeapons(): NetworkResponseState<List<Data>> =
+    override suspend fun getWeapons(): NetworkResponseState<List<WeaponDto>> =
         withContext(ioDispatcher) {
             try {
                 remoteDataSource.getWepons()
@@ -24,7 +24,7 @@ class ValorantRepositoryImpl @Inject constructor(
             }
             }
 
-    override suspend fun getWeaponById(weaponUuid: String): NetworkResponseState<List<Data>> =
+    override suspend fun getWeaponById(weaponUuid: String): NetworkResponseState<List<WeaponDto>> =
         withContext(ioDispatcher) {
             try {
                 remoteDataSource.getWeaaponById(weaponUuid)
