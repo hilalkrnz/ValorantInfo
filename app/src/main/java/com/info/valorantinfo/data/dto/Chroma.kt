@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class Chroma(
     @SerializedName("assetPath")
-    val assetPath: String,
+    val assetPath: String?,
     @SerializedName("displayIcon")
-    val displayIcon: String,
+    val displayIcon: String?,
     @SerializedName("displayName")
-    val displayName: String,
+    val displayName: String?,
     @SerializedName("fullRender")
-    val fullRender: String,
+    val fullRender: String?,
     @SerializedName("streamedVideo")
-    val streamedVideo: String,
+    val streamedVideo: String?,
     @SerializedName("swatch")
-    val swatch: String,
+    val swatch: String?,
     @SerializedName("uuid")
-    val uuid: String
+    val uuid: String?
 )

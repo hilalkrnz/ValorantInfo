@@ -45,6 +45,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$extensions_version"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 
     // Material
     implementation "com.google.android.material:material:$material_version"
@@ -61,9 +62,9 @@ dependencies {
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Test
     testImplementation "junit:junit:$junit_version"

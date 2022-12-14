@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GridPosition(
     @SerializedName("column")
-    val column: Int,
+    val column: Int?,
     @SerializedName("row")
-    val row: Int
+    val row: Int?
 )
