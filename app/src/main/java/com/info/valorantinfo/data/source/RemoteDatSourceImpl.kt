@@ -15,7 +15,7 @@ class RemoteDatSourceImpl @Inject constructor(private val valorantApi: ValorantA
             NetworkResponseState.Error(e)
         }
 
-    override suspend fun getWeaaponById(weaponUuid: String): NetworkResponseState<List<WeaponDto>> =
+    override suspend fun getWeaaponById(weaponUuid: String): NetworkResponseState<WeaponDto> =
         try {
             val response = valorantApi.getWeaponById(weaponUuid)
             NetworkResponseState.Success(response.data)

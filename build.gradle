@@ -5,15 +5,17 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'com.google.dagger.hilt.android' version '2.43' apply false
 }
+
 //closure
 ext{
-    android_core_ktx_version = "1.7.0"
+    android_core_ktx_version = "1.8.0"
     app_compat_version = "1.5.1"
 
     lifecycle_version = "2.5.1"
     fragment_version = "1.5.4"
     activity_version = "1.6.1"
     extensions_version = "2.2.0"
+    live_data_version = "2.5.1"
 
     material_version = "1.7.0"
 
@@ -24,6 +26,8 @@ ext{
     gson_version = "2.10"
 
     hilt_version = "2.43"
+
+    nav_version = "2.5.1"
 
     junit_version = "4.13.2"
     test_ext_junit_version = "1.1.3"
