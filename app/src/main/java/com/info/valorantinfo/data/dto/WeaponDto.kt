@@ -2,6 +2,7 @@ package com.info.valorantinfo.data.dto
 
 
 import com.google.gson.annotations.SerializedName
+import com.info.valorantinfo.domain.model.WeaponUiData
 
 data class WeaponDto(
     @SerializedName("assetPath")
@@ -25,3 +26,12 @@ data class WeaponDto(
     @SerializedName("weaponStats")
     val weaponStats: WeaponStats?
 )
+
+fun WeaponDto.toWeapon() : WeaponUiData {
+    return WeaponUiData(
+        id = uuid,
+        imageUrl = displayIcon,
+        name = displayName,
+        category = category
+    )
+}

@@ -2,6 +2,7 @@ package com.info.valorantinfo.data.repository
 
 import com.info.valorantinfo.data.NetworkResponseState
 import com.info.valorantinfo.data.dto.WeaponDto
+import com.info.valorantinfo.data.dto.toWeapon
 import com.info.valorantinfo.data.mapper.WeaponUiDataListMapperImpl
 import com.info.valorantinfo.data.source.RemoteDataSource
 import com.info.valorantinfo.di.coroutine.IoDispatcher
@@ -42,7 +43,7 @@ class ValorantRepositoryImpl @Inject constructor(
                     emit(NetworkResponseState.Error(response.exception))
                 }
                 is NetworkResponseState.Success -> {
-                   // emit(NetworkResponseState.Success(response.result))
+                    emit(NetworkResponseState.Success(response.result?.toWeapon()))
                 }
                 else -> {}
             }
