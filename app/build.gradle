@@ -3,20 +3,25 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'kotlin-parcelize'
 }
 
 android {
     namespace 'com.info.valorantinfo'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.info.valorantinfo"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
@@ -45,7 +50,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$extensions_version"
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$live_data_version"
 
     // Material
     implementation "com.google.android.material:material:$material_version"
@@ -62,9 +67,15 @@ dependencies {
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Coil
+    implementation "io.coil-kt:coil:$coil_version"
 
     // Test
     testImplementation "junit:junit:$junit_version"
