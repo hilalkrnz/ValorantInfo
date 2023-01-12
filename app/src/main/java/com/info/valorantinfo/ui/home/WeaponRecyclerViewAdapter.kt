@@ -11,6 +11,14 @@ class WeaponRecyclerViewAdapter :
 
     private val weaponList = mutableListOf<WeaponUiData>()
 
+    fun update(newList: List<WeaponUiData>) {
+        weaponList.apply {
+            clear()
+            addAll(newList)
+            notifyDataSetChanged()
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeaponViewHolder {
         return WeaponViewHolder.createFrom(parent)
     }

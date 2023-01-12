@@ -5,7 +5,7 @@ import com.info.valorantinfo.data.api.ValorantApi
 import com.info.valorantinfo.data.dto.WeaponDto
 import javax.inject.Inject
 
-class RemoteDatSourceImpl @Inject constructor(private val valorantApi: ValorantApi) : RemoteDataSource {
+class RemoteDataSourceImpl @Inject constructor(private val valorantApi: ValorantApi) : RemoteDataSource {
 
     override suspend fun getWepons(): NetworkResponseState<List<WeaponDto>> =
         try {

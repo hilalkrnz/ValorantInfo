@@ -6,27 +6,25 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.info.valorantinfo.R
 import com.info.valorantinfo.data.NetworkResponseState
-import com.info.valorantinfo.domain.WeaponEntity
-import com.info.valorantinfo.domain.mapper.WeaponListMapper
 import com.info.valorantinfo.domain.usecase.getWeapon.GetWeaponsUseCase
-import kotlinx.coroutines.flow.onEach
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
+@HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getWeaponsUseCase: GetWeaponsUseCase,
-    private val weaponListMapper: WeaponListMapper<WeaponEntity, HomeUiData>
-    ) : ViewModel() {
+    private val getWeaponsUseCase: GetWeaponsUseCase
+) : ViewModel() {
 
     //Backing field & encapsulation
     private val _valorantHomeUiState = MutableLiveData<HomeUiState>()
     val valorantHomeUistate: LiveData<HomeUiState> get() = _valorantHomeUiState
 
-    fun getWeapons(){
+    fun getWeapons() {
         viewModelScope.launch {
-            getWeaponsUseCase().onEach {
-                when(it) {
+            getWeaponsUseCase().collectLatest {
+                when (it) {
                     is NetworkResponseState.Error -> {
                         _valorantHomeUiState.postValue(HomeUiState.Error(R.string.error))
                     }
@@ -34,10 +32,11 @@ class HomeViewModel @Inject constructor(
                         _valorantHomeUiState.postValue(HomeUiState.Loading)
                     }
                     is NetworkResponseState.Success -> {
-                        _valorantHomeUiState.postValue(HomeUiState.Success(weaponListMapper.map(it.result)))
+                        _valorantHomeUiState.postValue(HomeUiState.Success(it.result!!))
                     }
                 }
             }
         }
     }
+
 }
