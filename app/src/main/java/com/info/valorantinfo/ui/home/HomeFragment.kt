@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSuccessUiState(data: List<WeaponUiData>) {
-        adapter.update(data)
+        adapter.updateList(data)
 
     }
 

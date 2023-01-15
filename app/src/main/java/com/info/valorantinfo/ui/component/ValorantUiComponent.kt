@@ -20,7 +20,7 @@ class ValorantUiComponent @JvmOverloads constructor(
         addView(binding.root)
     }
 
-    fun setPokeData(weaponUiData: WeaponUiData) {
+    fun setWeaponData(weaponUiData: WeaponUiData) {
         binding.weaponImage.loadImage(weaponUiData.imageUrl)
         binding.weaponName.text = weaponUiData.name
         binding.weaponCategory.text = weaponUiData.category
