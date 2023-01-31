@@ -93,4 +93,8 @@ dependencies {
     testImplementation "app.cash.turbine:turbine:$turbine_version"
 
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
+
+    implementation "androidx.arch.core:core-testing:2.1.0"
+
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
 }
