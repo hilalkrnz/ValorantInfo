@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import com.info.valorantinfo.R
 import com.info.valorantinfo.apiException
 import com.info.valorantinfo.data.NetworkResponseState
-import com.info.valorantinfo.domain.usecase.getWeapon.GetWeaponsUseCase
+import com.info.valorantinfo.domain.usecase.GetWeaponsUseCase
 import com.info.valorantinfo.weaponUiDataList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

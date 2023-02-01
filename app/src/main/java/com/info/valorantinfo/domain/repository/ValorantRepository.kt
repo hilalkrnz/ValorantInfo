@@ -7,5 +7,4 @@ import kotlinx.coroutines.flow.Flow
 interface ValorantRepository {
     suspend fun getWeapons(): Flow<NetworkResponseState<List<WeaponUiData>>>
     suspend fun getWeaponById(weaponUuid: String): Flow<NetworkResponseState<WeaponUiData>>
-    //suspend fun getWeaponByName(displayName: String): NetworkResponseState<WeaponDto>
 }

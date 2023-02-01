@@ -11,7 +11,8 @@ class WeaponUiDataListMapperImpl @Inject constructor() : WeaponUiDataListMapper<
                 id = it.uuid.orEmpty(),
                 imageUrl = it.displayIcon.orEmpty(),
                 name = it.displayName.orEmpty(),
-                category = it.category.orEmpty()
+                category = it.category.orEmpty().replace("EEquippableCategory::", ""),
+                weaponStats = it.weaponStats
             )
         } ?: emptyList()
     }

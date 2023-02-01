@@ -1,4 +1,4 @@
-package com.info.valorantinfo.ui.home
+package com.info.valorantinfo.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,41 +6,38 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.info.valorantinfo.R
 import com.info.valorantinfo.data.NetworkResponseState
-import com.info.valorantinfo.domain.usecase.GetWeaponsUseCase
+import com.info.valorantinfo.domain.usecase.GetWeaponByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
-    private val getWeaponsUseCase: GetWeaponsUseCase
+class DetailViewModel @Inject constructor(
+    private val getWeaponByIdUseCase: GetWeaponByIdUseCase
 ) : ViewModel() {
 
-    //Backing field & encapsulation
-    private val _valorantHomeUiState = MutableLiveData<HomeUiState>()
-    val valorantHomeUistate: LiveData<HomeUiState> get() = _valorantHomeUiState
+    private val _valorantDetailUiState = MutableLiveData<DetailUiState>()
+    val valorantDetailUiState: LiveData<DetailUiState> get() = _valorantDetailUiState
 
-    init {
-        getWeapons()
-    }
 
-    fun getWeapons() {
+    fun getWeaponById(weaponUuid: String) {
         viewModelScope.launch {
-            getWeaponsUseCase().collectLatest {
+            getWeaponByIdUseCase(weaponUuid).collectLatest {
                 when (it) {
                     is NetworkResponseState.Error -> {
-                        _valorantHomeUiState.postValue(HomeUiState.Error(R.string.error))
+                        _valorantDetailUiState.postValue(DetailUiState.Error(R.string.error))
                     }
                     NetworkResponseState.Loading -> {
-                        _valorantHomeUiState.postValue(HomeUiState.Loading)
+                        _valorantDetailUiState.postValue(DetailUiState.Loading)
                     }
                     is NetworkResponseState.Success -> {
-                        _valorantHomeUiState.postValue(HomeUiState.Success(it.result!!))
+                        _valorantDetailUiState.postValue(DetailUiState.Success(it.result!!))
                     }
                 }
             }
         }
     }
+
 
 }

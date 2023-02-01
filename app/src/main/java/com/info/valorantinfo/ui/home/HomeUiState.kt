@@ -7,4 +7,5 @@ sealed class HomeUiState {
     object Loading: HomeUiState()
     data class Success(val data: List<WeaponUiData>) : HomeUiState()
     data class Error(@StringRes val message: Int) : HomeUiState()
+
 }

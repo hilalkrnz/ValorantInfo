@@ -28,7 +28,8 @@ val weaponUiData = WeaponUiData(
     "63e6c2b6-4a8e-869c-3d4c-e38355226584",
     "https://media.valorant-api.com/weapons/63e6c2b6-4a8e-869c-3d4c-e38355226584/displayicon.png",
     "Odin",
-    "EEquippableCategory::Heavy"
+    "EEquippableCategory::Heavy",
+    null
 )
 
 @VisibleForTesting

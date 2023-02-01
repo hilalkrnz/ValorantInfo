@@ -4,7 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 class WeaponDetailResponse(
     @SerializedName("data")
-    val `data`: WeaponDto?,
-    @SerializedName("status")
-    val status: Int
+    val data: WeaponDto?
 )

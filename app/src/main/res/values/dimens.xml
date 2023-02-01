@@ -12,5 +12,8 @@
     <dimen name="space_32">32dp</dimen>
 
     <dimen name="size_16">16sp</dimen>
+    <dimen name="size_12">12sp</dimen>
     <dimen name="size_14">14sp</dimen>
+    <dimen name="space_450">450dp</dimen>
+    <dimen name="space_40">40dp</dimen>
 </resources>

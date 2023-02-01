@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.info.valorantinfo.R
 import com.info.valorantinfo.databinding.FragmentHomeBinding
 import com.info.valorantinfo.domain.model.WeaponUiData
 import com.info.valorantinfo.utility.observeTextChanges
@@ -16,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.*
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -37,8 +39,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeSearchTextChanges()
+
+        onClickWeaponListAdapter()
+
+        //observeSearchTextChanges()
+
         observeUiState()
+    }
+
+    private fun onClickWeaponListAdapter() {
+        adapter.setOnItemClickListener {
+            val weaponUiData = adapter.getItem(it)
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailFragment(weaponUiData)
+            )
+        }
+        binding.weaponListRecyclerView.adapter = adapter
     }
 
 
@@ -54,6 +70,7 @@ class HomeFragment : Fragment() {
                 }
                 is HomeUiState.Success -> {
                     handleSuccessUiState(it.data)
+
                 }
             }
         }

@@ -8,14 +8,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="8dp"
-        app:cardBackgroundColor="@color/material_dynamic_tertiary80"
-        app:cardCornerRadius="16dp" />
+        android:elevation="@dimen/space_8"
+        app:cardCornerRadius="@dimen/space_16"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/card_view_custom">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/weapon_image"
@@ -31,7 +33,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
             android:textSize="@dimen/size_16"
+            android:textStyle="bold"
             tools:text="Name" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -40,7 +44,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/size_16"
+            android:textSize="@dimen/size_14"
+            android:textColor="@color/white"
             tools:text="Category" />
 
     </LinearLayout>

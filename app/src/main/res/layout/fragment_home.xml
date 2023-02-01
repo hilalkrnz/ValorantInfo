@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -12,6 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_16"
         android:layout_marginVertical="@dimen/space_32"
+        android:textColorHint="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintTextColor="@color/white"
+        android:textCursorDrawable="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +26,10 @@
             android:id="@+id/search_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/search" />
+            android:background="@drawable/search_background"
+            android:hint="@string/search"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,9 +42,8 @@
         app:layout_constraintEnd_toEndOf="@+id/search_container"
         app:layout_constraintStart_toStartOf="@+id/search_container"
         app:layout_constraintTop_toBottomOf="@+id/search_container"
-        app:layout_constraintVertical_bias="0.0"
         app:spanCount="2"
-        tools:listitem="@layout/adapter_valorant_item"/>
+        tools:listitem="@layout/adapter_valorant_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

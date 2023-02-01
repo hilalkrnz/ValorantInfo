@@ -32,6 +32,7 @@ fun WeaponDto.toWeapon() : WeaponUiData {
         id = uuid,
         imageUrl = displayIcon,
         name = displayName,
-        category = category
+        category = category?.replace("EEquippableCategory::", ""),
+        weaponStats = weaponStats
     )
 }

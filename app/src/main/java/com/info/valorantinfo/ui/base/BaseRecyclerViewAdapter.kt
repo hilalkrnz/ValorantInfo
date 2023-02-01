@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class BaseRecyclerViewAdapter<T : Any, VH : BaseViewHolder<T>> :
     RecyclerView.Adapter<VH>() {
 
-    private val list = mutableListOf<T>()
+    val list = mutableListOf<T>()
+
 
     fun updateList(newList: List<T>) {
         list.apply {
@@ -15,6 +16,7 @@ abstract class BaseRecyclerViewAdapter<T : Any, VH : BaseViewHolder<T>> :
             notifyDataSetChanged()
         }
     }
+
     fun getItem(position: Int) = list[position]
 
     abstract override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH
