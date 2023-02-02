@@ -42,7 +42,7 @@ class HomeViewModelTest {
         MockitoAnnotations.openMocks(this)
         Dispatchers.setMain(Dispatchers.Unconfined)
         homeViewModel = HomeViewModel(getWeaponsUseCase)
-        homeViewModel.valorantHomeUistate.observeForever(observer)
+        homeViewModel.valorantHomeUiState.observeForever(observer)
     }
 
     @Test
@@ -95,6 +95,6 @@ class HomeViewModelTest {
     @After
     fun shutDown() {
         Dispatchers.resetMain()
-        homeViewModel.valorantHomeUistate.removeObserver(observer)
+        homeViewModel.valorantHomeUiState.removeObserver(observer)
     }
 }

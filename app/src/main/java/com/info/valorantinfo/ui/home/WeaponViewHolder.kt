@@ -16,11 +16,6 @@ class WeaponViewHolder(
         }
     }
 
-    /* companion object {
-         fun createFrom(parent: ViewGroup) =
-             WeaponViewHolder(parent.inflateAdapterItem(AdapterValorantItemBinding::inflate))
-     }*/
-
     override fun onBind(data: WeaponUiData) {
         binding.valorantComponent.setWeaponData(data)
     }

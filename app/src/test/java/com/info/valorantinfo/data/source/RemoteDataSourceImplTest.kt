@@ -32,7 +32,7 @@ class RemoteDataSourceImplTest {
                 .thenReturn(
                     WeaponsResponse(weaponDtoList)
                 )
-            val response = remoteDataSourceImpl.getWepons()
+            val response = remoteDataSourceImpl.getWeapons()
             assertThat(response).isInstanceOf(NetworkResponseState.Success::class.java)
         }
     }
@@ -45,7 +45,7 @@ class RemoteDataSourceImplTest {
                     null
                 )
 
-            val response = remoteDataSourceImpl.getWepons()
+            val response = remoteDataSourceImpl.getWeapons()
             assertThat(response).isInstanceOf(NetworkResponseState.Error::class.java)
         }
     }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class RemoteDataSourceImpl @Inject constructor(private val valorantApi: ValorantApi) : RemoteDataSource {
 
-    override suspend fun getWepons(): NetworkResponseState<List<WeaponDto>> =
+    override suspend fun getWeapons(): NetworkResponseState<List<WeaponDto>> =
         try {
             val response = valorantApi.getWeapons()
             NetworkResponseState.Success(response.data)
@@ -15,7 +15,7 @@ class RemoteDataSourceImpl @Inject constructor(private val valorantApi: Valorant
             NetworkResponseState.Error(e)
         }
 
-    override suspend fun getWeaaponById(weaponUuid: String): NetworkResponseState<WeaponDto> =
+    override suspend fun getWeaponById(weaponUuid: String): NetworkResponseState<WeaponDto> =
         try {
             val response = valorantApi.getWeaponById(weaponUuid)
             NetworkResponseState.Success(response.data)

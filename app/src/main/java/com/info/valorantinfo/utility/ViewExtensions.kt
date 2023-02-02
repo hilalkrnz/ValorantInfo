@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.onStart
 
-
 fun AppCompatEditText.observeTextChanges(): Flow<String> {
     return callbackFlow {
         val textWatcher = object : AbstractTextWatcher() {

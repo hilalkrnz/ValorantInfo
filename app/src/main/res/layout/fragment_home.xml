@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/grey_dark"
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,6 +44,25 @@
         app:layout_constraintTop_toBottomOf="@+id/search_container"
         app:spanCount="2"
         tools:listitem="@layout/adapter_valorant_item" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="@dimen/space_50"
+            android:layout_height="@dimen/space_50"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/search_container"
+            app:layout_constraintStart_toStartOf="@+id/search_container"
+            app:layout_constraintTop_toBottomOf="@+id/search_container"
+            tools:ignore="MissingConstraints" />
+
+    </FrameLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -59,18 +60,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     private fun observeUiState() {
-        viewModel.valorantHomeUistate.observe(viewLifecycleOwner) {
+        viewModel.valorantHomeUiState.observe(viewLifecycleOwner) {
             when (it) {
                 is HomeUiState.Error -> {
                     Toast.makeText(requireContext(), getString(it.message), Toast.LENGTH_LONG)
                         .show()
+                    binding.progressBar.isVisible = false
                 }
                 HomeUiState.Loading -> {
-                    Toast.makeText(requireContext(), "Loading", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(requireContext(), "Loading", Toast.LENGTH_LONG).show()
+                    binding.progressBar.isVisible = true
                 }
                 is HomeUiState.Success -> {
+                    binding.progressBar.isVisible = false
                     handleSuccessUiState(it.data)
-
                 }
             }
         }
@@ -78,7 +81,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun handleSuccessUiState(data: List<WeaponUiData>) {
         adapter.updateList(data)
-
     }
 
     private fun observeSearchTextChanges() {

@@ -1,4 +1,4 @@
-package com.info.valorantinfo.di
+package com.info.valorantinfo.di.source
 
 import com.info.valorantinfo.data.source.RemoteDataSourceImpl
 import com.info.valorantinfo.data.source.RemoteDataSource

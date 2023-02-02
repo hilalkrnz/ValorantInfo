@@ -19,7 +19,7 @@ class HomeViewModel @Inject constructor(
 
     //Backing field & encapsulation
     private val _valorantHomeUiState = MutableLiveData<HomeUiState>()
-    val valorantHomeUistate: LiveData<HomeUiState> get() = _valorantHomeUiState
+    val valorantHomeUiState: LiveData<HomeUiState> get() = _valorantHomeUiState
 
     init {
         getWeapons()

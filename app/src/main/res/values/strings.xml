@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">ValorantInfo</string>
     <string name="error">Error</string>
-    
+
     <string name="search">Search</string>
     <string name="run_speed">Run Speed</string>
     <string name="magazine">Magazine</string>
     <string name="fire_rate">Fire Rate</string>
+
+    <string name="name">Name</string>
+    <string name="category">Category</string>
 </resources>

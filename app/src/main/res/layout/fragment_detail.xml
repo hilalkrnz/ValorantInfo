@@ -12,12 +12,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_dark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
         <com.info.valorantinfo.ui.component.ValorantUiComponent
             android:id="@+id/valorant_component"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_450"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/space_16" />
+            android:layout_height="@dimen/space_400"
+            android:layout_margin="@dimen/space_16"
+            android:layout_weight="1" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -62,7 +74,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/size_16"
                     android:textStyle="bold"
-                    tools:text="FireRate" />
+                    tools:text="@string/fire_rate" />
 
             </TableRow>
 
@@ -93,7 +105,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/size_16"
                     android:textStyle="bold"
-                    tools:text="magazine" />
+                    tools:text="@string/magazine" />
 
             </TableRow>
 
@@ -124,7 +136,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/size_16"
                     android:textStyle="bold"
-                    tools:text="runSpeed" />
+                    tools:text="@string/run_speed" />
 
             </TableRow>
 
@@ -133,7 +145,16 @@
 
     </LinearLayout>
 
-
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/space_50"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 

@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.info.valorantinfo.R
 import com.info.valorantinfo.databinding.FragmentDetailBinding
@@ -36,12 +38,22 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         viewModel.getWeaponById(args.weaponArgument.id!!)
 
+        onClickBack()
+
         observeDetailState()
 
         initTextSizeViews()
     }
 
-    fun initTextSizeViews() {
+    private fun onClickBack() {
+        binding.toolbarBack.setNavigationIcon(R.drawable.ic_baseline_back_24)
+        binding.toolbarBack.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+
+    private fun initTextSizeViews() {
         binding.valorantComponent.setNameTextSize(NAME_TEXT_SIZE)
         binding.valorantComponent.setCategoryTextSize(CATEGORY_TEXT_SIZE)
     }
@@ -52,11 +64,13 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 is DetailUiState.Error -> {
                     Toast.makeText(requireContext(), getString(it.message), Toast.LENGTH_LONG)
                         .show()
+                    binding.progressBar.isVisible = false
                 }
                 DetailUiState.Loading -> {
-                    Toast.makeText(requireContext(), "Loading", Toast.LENGTH_LONG).show()
+                    binding.progressBar.isVisible = true
                 }
                 is DetailUiState.Success -> {
+                    binding.progressBar.isVisible = false
                     handleSuccessDetailState(it.data)
 
                 }

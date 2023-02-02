@@ -5,6 +5,6 @@ import com.info.valorantinfo.data.dto.WeaponDto
 
 interface RemoteDataSource {
 
-    suspend fun getWepons() : NetworkResponseState<List<WeaponDto>>
-    suspend fun getWeaaponById(weaponUuid: String) : NetworkResponseState<WeaponDto>
+    suspend fun getWeapons() : NetworkResponseState<List<WeaponDto>>
+    suspend fun getWeaponById(weaponUuid: String) : NetworkResponseState<WeaponDto>
 }

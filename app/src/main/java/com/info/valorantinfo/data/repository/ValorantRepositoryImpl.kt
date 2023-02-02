@@ -23,7 +23,7 @@ class ValorantRepositoryImpl @Inject constructor(
     override suspend fun getWeapons(): Flow<NetworkResponseState<List<WeaponUiData>>> {
         return flow {
             emit(NetworkResponseState.Loading)
-            when(val response = remoteDataSource.getWepons()) {
+            when(val response = remoteDataSource.getWeapons()) {
                 is NetworkResponseState.Error -> {
                     emit(NetworkResponseState.Error(response.exception))
                 }
@@ -38,7 +38,7 @@ class ValorantRepositoryImpl @Inject constructor(
     override suspend fun getWeaponById(weaponUuid: String): Flow<NetworkResponseState<WeaponUiData>> {
         return flow {
             emit(NetworkResponseState.Loading)
-            when(val response = remoteDataSource.getWeaaponById(weaponUuid)) {
+            when(val response = remoteDataSource.getWeaponById(weaponUuid)) {
                 is NetworkResponseState.Error -> {
                     emit(NetworkResponseState.Error(response.exception))
                 }

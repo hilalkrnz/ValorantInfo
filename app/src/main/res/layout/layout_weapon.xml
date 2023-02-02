@@ -36,7 +36,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/size_16"
             android:textStyle="bold"
-            tools:text="Name" />
+            tools:text="@string/name" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/weapon_category"
@@ -46,7 +46,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="@dimen/size_14"
             android:textColor="@color/white"
-            tools:text="Category" />
+            tools:text="@string/category" />
 
     </LinearLayout>
 
