@@ -26,7 +26,7 @@ Valorant Info app is a to demonstrate tech stacks with a MVVM architecture, with
     <td><img src="https://user-images.githubusercontent.com/57602386/216441590-e5a50a5a-3487-4566-bff0-37b8e69ea010.png" width="100%"></td>
     <td><img src="https://user-images.githubusercontent.com/57602386/216450952-6a72b6e5-e707-4a79-91e8-7715c91254f7.png" width="100%"></td>
     <td><img src="https://user-images.githubusercontent.com/57602386/216451187-7973cf88-e976-4e1e-b954-1ce122386f97.png" width="100%"></td>
-    <td><img src="https://user-images.githubusercontent.com/57602386/216457598-aa859306-d991-4217-ad43-6bee6216a6ff.gif" width="100%"></td>
+    <td><img src="https://user-images.githubusercontent.com/77745850/216458781-fb821299-fe4d-4eca-a431-494540122c9f.gif" width="100%"></td>
    </tr>  
   </tr>
 </table>
@@ -43,4 +43,4 @@ https://user-images.githubusercontent.com/57602386/216454099-2ea4c983-7091-4c21-
 
 - 100% [Kotlin](https://kotlinlang.org/) based + [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) and [Flow](https://developer.android.com/kotlin/flow)
 
-
+![valo](https://user-images.githubusercontent.com/77745850/216458781-fb821299-fe4d-4eca-a431-494540122c9f.gif)
