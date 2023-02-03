@@ -65,7 +65,7 @@ Valorant Info app is a to demonstrate tech stacks with a MVVM architecture, with
 
 This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture
 
-![mvvm](https://user-images.githubusercontent.com/57602386/216581683-3f330617-6e80-485d-a442-c582a6542ec2.jpg)
+![mvvm](https://user-images.githubusercontent.com/57602386/216638586-bdf75721-4f67-4eab-afe9-1ff96862d334.jpg)
 
 #### Modules Design:
 - Data
