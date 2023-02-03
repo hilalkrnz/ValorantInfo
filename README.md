@@ -91,6 +91,11 @@ This app uses [***MVVM (Model View View-Model)***](https://developer.android.com
 Valorant Agents uses the [Valorant-api](https://dash.valorant-api.com/) for required data.
 Valorant-api provides an extensive API containing data of most in-game items, assets and more!
 
+### Connect with me :love_letter:
+
+[![Linkedin Badge](https://img.shields.io/badge/-Linkedin-FF4756?style=quare&labelColor=FF4756&logo=Linkedin&logoColor=white&link=link)](https://www.linkedin.com/in/hilal-kurnaz/) 
+
+
 # License
 ```xml
 Designed and developed by 2022 Hilalkrnz
